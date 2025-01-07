@@ -4,7 +4,7 @@
     [![Latest Unstable Version](https://poser.pugx.org/leochien/laravel-spgateway/v/unstable)](https://packagist.org/packages/leochien/laravel-spgateway)
     [![License](https://poser.pugx.org/leochien/laravel-spgateway/license)](https://packagist.org/packages/leochien/laravel-spgateway)
 
-Laravel Spgateway是一個開源的 [智付通](https://www.spgateway.com/) 非官方套件
+Laravel Spgateway是一個開源的 [智付通](https://www.newebpay.com/) 非官方套件
 
 ## 目錄
 1. [環境要求](#要求)
@@ -20,8 +20,8 @@ Laravel Spgateway是一個開源的 [智付通](https://www.spgateway.com/) 非�
 
 ## 要求
 
-1. PHP >= 7
-2. Laravel >= 5
+1. PHP >= 7.2.5
+2. Laravel >= 7
 3. Composer
 
 ## 安裝
@@ -186,7 +186,7 @@ $order->send();
 1. `tradeInfo (String)`: 智付通回傳，經AES加密之交易資料
 
 ##### 回傳
-詳見[智付通文件](https://www.spgateway.com/WebSiteData/document/5.pdf)第六節：交易支付系統回傳參數說明 / 第七節：取號完成系統回傳參數說明
+詳見[智付通文件](https://www.newebpay.com/WebSiteData/document/5.pdf)第六節：交易支付系統回傳參數說明 / 第七節：取號完成系統回傳參數說明
 ```
 {
     "Status": "..."
@@ -210,7 +210,7 @@ $tradeInfo = MPG::parse(request()->TradeInfo);
 2. `amount (Integer)`: 訂單金額
 
 ##### 回傳
-詳見[智付通文件](https://www.spgateway.com/WebSiteData/document/4.pdf)第四章：交易查詢系統回應訊息
+詳見[智付通文件](https://www.newebpay.com/WebSiteData/document/4.pdf)第四章：交易查詢系統回應訊息
 ```
 {
     "Status": "..."
@@ -521,9 +521,9 @@ $refund = Refund::generate('20171121WJNBX5NNBP', 100);
 傳送退費 / 取消授權請求到智付通
 
 ##### 回傳
-取消授權：詳見[智付通文件](https://www.spgateway.com/WebSiteData/document/gateway_creditcard_deauthorize_api_V1_0_0.pdf)第五節：取消授權完成後系統回應訊息
+取消授權：詳見[智付通文件](https://www.newebpay.com/WebSiteData/document/gateway_creditcard_deauthorize_api_V1_0_0.pdf)第五節：取消授權完成後系統回應訊息
 
-退款：詳見[智付通文件](https://www.spgateway.com/WebSiteData/document/2.pdf)第五節：系統回應訊息
+退款：詳見[智付通文件](https://www.newebpay.com/WebSiteData/document/2.pdf)第五節：系統回應訊息
 ```
 {
     "Status": "..."
@@ -684,4 +684,3 @@ $res = $transfer->send();
 ## License
 
 Laravel Spgateway is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT)
-
